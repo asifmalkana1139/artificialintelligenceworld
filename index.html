@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI World - Artificial Intelligence</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #fff;
+      line-height: 1.7;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.95);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #20344f;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #00d9ff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00d9ff;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      background:
+        radial-gradient(circle at top, #123b60, transparent 45%),
+        linear-gradient(135deg, #07111f, #0b1d32);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: #00d9ff;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #c9d8e8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00d9ff;
+      color: #06101c;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      color: #00d9ff;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aebfd1;
+    }
+
+    .content {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .paragraph {
+      background: #0d2035;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 4px solid #00d9ff;
+      border-radius: 10px;
+      color: #dce8f3;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: #0d2035;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid #1c3855;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #00d9ff;
+      box-shadow: 0 10px 30px rgba(0, 217, 255, 0.12);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #00d9ff;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #b8cadb;
+    }
+
+    /* Contact */
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+      background: #0d2035;
+      padding: 35px;
+      border-radius: 15px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      background: #07111f;
+      border: 1px solid #284765;
+      color: white;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #00d9ff;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: #040b14;
+      text-align: center;
+      padding: 25px;
+      color: #8fa4b8;
+      border-top: 1px solid #20344f;
+    }
+
+    /* Mobile */
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">AI WORLD</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About AI</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to the World of AI</h1>
+
+      <p>
+        Discover how Artificial Intelligence is changing technology,
+        education, business, healthcare and everyday life.
+      </p>
+
+      <a href="#about" class="btn">Explore AI</a>
+    </div>
+  </section>
+
+  <!-- About AI -->
+  <section id="about">
+    <div class="section-title">
+      <h2>About Artificial Intelligence</h2>
+      <p>Learn the basics of modern Artificial Intelligence.</p>
+    </div>
+
+    <div class="content">
+
+      <div class="paragraph">
+        <strong>Paragraph 1 — What is AI?</strong><br><br>
+        Artificial Intelligence, commonly called AI, is a field of computer science
+        that focuses on creating systems capable of performing tasks that normally
+        require human intelligence. These tasks can include understanding language,
+        recognizing images, solving problems, learning from information, and making
+        predictions. AI systems use algorithms and large amounts of data to identify
+        patterns and produce useful results. Modern AI is used in websites, mobile
+        applications, search engines, robots, and many other technologies. The main
+        purpose of AI is not simply to make computers powerful, but to help machines
+        perform useful tasks more intelligently, efficiently, and accurately.
+      </div>
+
+      <div class="paragraph">
+        <strong>Paragraph 2 — How AI Works</strong><br><br>
+        AI works by using algorithms, data, and computing power to learn patterns
+        and generate useful outputs. One important approach is machine learning,
+        where a computer system learns from examples instead of being programmed
+        with instructions for every individual situation. Deep learning is a more
+        advanced method that uses neural networks containing many layers. These
+        networks can process large amounts of information and identify complex
+        patterns. For example, an AI model can learn to recognize objects in images
+        after being trained with many examples. The quality of an AI system depends
+        on its training data, algorithms, computing resources, and careful evaluation.
+      </div>
+
+      <div class="paragraph">
+        <strong>Paragraph 3 — AI in Everyday Life</strong><br><br>
+        Artificial Intelligence has become part of everyday life, even when people
+        do not always notice it. Search engines use AI to understand questions and
+        organize information. Streaming services can recommend movies, music, and
+        videos based on user activity. Smartphones use intelligent features for
+        photography, translation, voice recognition, and security. Online stores can
+        recommend products according to browsing and purchasing patterns. AI is also
+        being used in navigation applications to estimate travel times and suggest
+        routes. Virtual assistants can understand spoken requests and provide
+        information. These examples show how AI can make digital services more
+        personalized, convenient, and efficient for users around the world.
+      </div>
+
+      <div class="paragraph">
+        <strong>Paragraph 4 — Future of AI</strong><br><br>
+        The future of Artificial Intelligence may bring significant changes to many
+        areas of society. Researchers are developing systems that can assist with
+        scientific research, education, software development, healthcare, engineering,
+        and creative work. AI may help people analyze large datasets, automate
+        repetitive activities, and discover patterns that are difficult to identify
+        manually. At the same time, responsible development is important because AI
+        systems can produce incorrect information, reflect problems in their data,
+        or affect privacy and employment. Human oversight, testing, transparency,
+        and responsible use can help reduce these risks. The future of AI will
+        depend on how people design, govern, and use these technologies.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section id="applications">
+    <div class="section-title">
+      <h2>AI Applications</h2>
+      <p>Some important areas where AI is being used.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">🏥</div>
+        <h3>Healthcare</h3>
+        <p>
+          AI can help analyze medical information, support research,
+          assist with image analysis, and improve healthcare workflows.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>Education</h3>
+        <p>
+          AI can support personalized learning, language practice,
+          educational tools, tutoring systems, and content creation.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💼</div>
+        <h3>Business</h3>
+        <p>
+          Businesses use AI for customer support, data analysis,
+          recommendations, automation, forecasting, and productivity.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚗</div>
+        <h3>Transportation</h3>
+        <p>
+          AI can help with route planning, traffic analysis,
+          driver assistance systems, and transportation optimization.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Robotics</h3>
+        <p>
+          AI allows robots to process information, recognize objects,
+          understand environments, and perform useful tasks.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔐</div>
+        <h3>Cybersecurity</h3>
+        <p>
+          AI can analyze patterns and help security teams identify
+          unusual activity and potential digital threats.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Send us a message about Artificial Intelligence.</p>
+    </div>
+
+    <div class="contact-box">
+      <form id="contactForm">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          required
+        >
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Your Email"
+          required
+        >
+
+        <textarea
+          id="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
+        <button type="submit" class="btn">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 AI World. All Rights Reserved.</p>
+    <p>Learn • Explore • Understand Artificial Intelligence</p>
+  </footer>
+
+  <script>
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+
+        alert(
+          "Thank you, " + name +
+          "! Your message has been received."
+        );
+
+        this.reset();
+      });
+  </script>
+
+</body>
+</html>
